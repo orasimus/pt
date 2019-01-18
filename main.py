@@ -113,4 +113,9 @@ def main():
         torch.save(model.state_dict(),"mnist_cnn.pt")
         
 if __name__ == '__main__':
+    current_device = torch.cuda.current_device()
+    print('Current device: {0}'.format(current_device))
+    print(torch.cuda.device(current_device))
+    print('Device count: {0}'.format(torch.cuda.device_count()))
+    print(torch.cuda.get_device_name(current_device))
     main()
