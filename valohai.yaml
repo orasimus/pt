@@ -4,3 +4,14 @@
     name: Train mnist
     image: pytorch/pytorch
     command: python main.py
+
+- step:
+    name: Worker environment check
+    image: pytorch/pytorch
+    command:
+      - pwd
+      - ls -la
+      - nvidia-smi
+      - python --version
+      - nvcc --version | grep release
+      - cat /usr/include/x86_64-linux-gnu/cudnn_v*.h | grep CUDNN_MAJOR -A 2
