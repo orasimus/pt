@@ -1,0 +1,6 @@
+---
+
+- step:
+    name: Train mnist
+    image: pytorch/pytorch
+    command: python main.py
